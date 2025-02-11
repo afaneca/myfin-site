@@ -1,0 +1,59 @@
+:root {
+    --primary: #16599c;
+    --primary-dark: #154778;
+    --primary-darkest: #1f2d3d;
+    --white: #ffffff;
+    --primary-gradient: linear-gradient(45deg, #2196F3, #0D47A1);
+    --primary-dark-gradient: linear-gradient(45deg, #0D47A1, #073171);
+    --primary-darkest-gradient: linear-gradient(45deg, #073171, #092551);
+
+  }
+
+header {
+    background-color: var(--primary);
+    background: var(--primary-gradient);
+
+}
+
+nav .brand-logo {
+    color: white;
+}
+
+nav ul:not(.dropdown-content)>li>a, nav a {
+    color: white;
+}
+
+.logo {
+    display: inline-block;
+    height: 100%;
+}
+
+.logo>img {
+    vertical-align: middle
+}
+
+.card {
+    background-color: var(--primary);
+    background: var(--primary-gradient);
+
+}
+
+#get-started{
+    background-color: var(--primary);
+    background: var(--primary-gradient);
+}
+
+.btn.filled, .btn.filled:focus {
+    background-color: var(--primary-dark);
+    color: var(--white);
+}
+
+.btn.filled:hover {
+    background-color: var(--primary-darkest);
+    color: var(--white);
+}
+
+nav ul:not(.dropdown-content)>li>a:hover:not(.active) {
+    background-color: transparent;
+    font-weight: bold;
+}

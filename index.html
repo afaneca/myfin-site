@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyFin Budget - Take Control of Your Finances</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="res/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="res/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="res/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="res/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="MyFin" />
+    <link rel="manifest" href="res/favicon/site.webmanifest" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.2.1/dist/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link href="main.css" rel="stylesheet" />
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const elems = document.querySelectorAll('.sidenav');
+        const instances = M.Sidenav.init(elems);
+      });
+    </script>
+  </head>
+  <body class="grey lighten-3">
+    <!-- Hero Section -->
+    <header
+      class="darken-2 white-text section"
+      style="padding-left: 1.5rem; padding-right: 1.5rem"
+    >
+      <!-- Navigation Menu -->
+      <nav
+        class="navbar"
+        style="background-color: transparent; box-shadow: none"
+      >
+        <div class="nav-wrapper white-text">
+          <a href="#!" class="brand-logo"
+            ><img
+              src="res/logo_light_plain_transparentbg.png"
+              style="width: 80%; max-width: 250px"
+          /></a>
+          <a href="#" data-target="mobile-menu" class="sidenav-trigger"
+            ><i class="material-icons">menu</i></a
+          >
+          <ul class="right hide-on-med-and-down">
+            <li>
+              <a
+                href="https://github.com/afaneca/myfin/wiki/Project-Setup"
+                target="_blank"
+                >Docs</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/afaneca/myfin/" target="_blank"
+                >Github</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <ul class="sidenav" id="mobile-menu">
+        <li>
+          <a
+            href="https://github.com/afaneca/myfin/wiki/Project-Setup"
+            target="_blank"
+            >Docs</a
+          >
+        </li>
+        <li>
+          <a href="https://github.com/afaneca/myfin/" target="_blank">Github</a>
+        </li>
+      </ul>
+
+      <div style="margin-top: 5vh">
+        <div class="center-align" style="margin: 0 auto">
+          <a
+            href="https://github.com/afaneca/myfin/releases"
+            tabindex="0"
+            class="btn filled icon-right rounded waves-effect waves-light"
+          >
+            <i class="material-icons">rocket_launch</i>Version 7.4.0 is live!
+          </a>
+        </div>
+        <div class="row">
+          <div class="col s12 l6 center-align">
+            <h1 class="header" style="margin-top: 5px">
+              Take Control of Your Finances with <strong>MyFin Budget</strong>
+            </h1>
+            <p class="flow-text">
+              Smart budgeting, expense tracking, and investment insights—all in
+              one place.
+            </p>
+            <p class="flow-text">
+              <i>Free & open-source, <strong>forever</strong>!</i>
+            </p>
+            <a
+              href="https://github.com/afaneca/myfin/wiki/Project-Setup"
+              class="btn waves-effect white blue-text text-darken-2"
+              >Get Started</a
+            >
+          </div>
+          <div class="col s12 l6 center-align">
+            <img
+              src="res/frames.png"
+              alt="MyFin App Screenshot"
+              class="responsive-img"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="container section">
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-content center-align">
+              <p><i class="large material-icons">dataset_linked</i></p>
+              <h5>Smart Budgeting</h5>
+              <p>Easily plan, track, and manage your budgets in one place.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-content center-align">
+              <p><i class="large material-icons">donut_large</i></p>
+              <h5>Investment Insights</h5>
+              <p>Monitor your portfolio and optimize your financial growth.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-content center-align">
+              <p><i class="large material-icons">query_stats</i></p>
+              <h5>Expense Tracking</h5>
+              <p>See where your money goes and improve your spending habits.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section id="get-started" class="darken-2 white-text center-align section">
+      <h2>Start Budgeting Smarter Today</h2>
+      <p>Start the journey to financial freedom today!</p>
+      <a href="#" class="btn waves-effect white blue-text text-darken-2"
+        >Get Started</a
+      >
+      <br />
+      <p style="font-style: italic; color: #c0bfbf; margin-top: 28px">
+        By
+        <a style="color: #c0bfbf" href="https://afaneca.com">António Faneca</a>
+      </p>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.2.1/dist/js/materialize.min.js"></script>
+  </body>
+</html>
