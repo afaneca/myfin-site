@@ -1,2 +1,1 @@
-# myfin-site
-MyFin Budget - myfinbudget.com's landing page
+# MyFin Budget - myfinbudget.com's landing page
