@@ -1,0 +1,23 @@
+{
+    "versionText": "Version {{version}} is live!",
+    "heroTitle": "Take Control of Your Finances with <strong>MyFin Budget</strong>",
+    "heroSubtitle": "Smart budgeting, expense tracking, and investment insights—all in one place.",
+    "freeForever": "Free & open-source, <strong>forever</strong>!",
+    "getStarted": "Get Started",
+    "features": {
+      "budgeting": "Smart Budgeting",
+      "budgetingDesc": "Easily plan, track, and manage your budgets in one place.",
+      "investments": "Investment Insights",
+      "investmentsDesc": "Monitor your portfolio and optimize your financial growth.",
+      "expenses": "Expense Tracking",
+      "expensesDesc": "See where your money goes and improve your spending habits."
+    },
+    "callToAction": "Start Budgeting Smarter",
+    "journey": "Start the journey to financial freedom today!",
+    "by": "By",
+    "menu": {
+        "docs": "Docs",
+        "github": "Github"
+    }
+  }
+  
