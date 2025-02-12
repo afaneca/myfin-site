@@ -28,12 +28,6 @@
       rel="stylesheet"
     />
     <link href="main.css" rel="stylesheet" />
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const elems = document.querySelectorAll('.sidenav');
-        const instances = M.Sidenav.init(elems);
-      });
-    </script>
   </head>
   <body class="grey lighten-3">
     <!-- Hero Section -->
@@ -92,7 +86,7 @@
             tabindex="0"
             class="btn filled icon-right rounded waves-effect waves-light"
           >
-            <i class="material-icons">rocket_launch</i>Version 7.4.0 is live!
+          
           </a>
         </div>
         <div class="row">
@@ -172,5 +166,11 @@
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.2.1/dist/js/materialize.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", async function () {
+        init();
+      });
+      </script>
+    <script src="main.js"></script>
   </body>
 </html>
