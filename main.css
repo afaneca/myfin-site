@@ -1,18 +1,28 @@
 :root {
-    --primary: #16599c;
-    --primary-dark: #154778;
+    --primary: #1976d2;
+    --primary-dark: #1c67b2;
     --primary-darkest: #1f2d3d;
+    --background: #f9f9f9;
+    --accent: #ffca28;
     --white: #ffffff;
     --primary-gradient: linear-gradient(45deg, #2196F3, #0D47A1);
     --primary-dark-gradient: linear-gradient(45deg, #0D47A1, #073171);
     --primary-darkest-gradient: linear-gradient(45deg, #073171, #092551);
-
+    --shadow: rgba(0, 0, 0, 0.1);
+    --text-dark: #212121;
+    --text-light: #ffffff;
   }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background);
+    color: var(--text-dark);
+    margin: 0;
+}
 
 header {
     background-color: var(--primary);
-    background: var(--primary-gradient);
-
+    #background: var(--primary-gradient);
 }
 
 nav .brand-logo {
@@ -33,9 +43,18 @@ nav ul:not(.dropdown-content)>li>a, nav a {
 }
 
 .card {
-    background-color: var(--primary);
-    background: var(--primary-gradient);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px var(--shadow);
+    transition: transform 0.3s ease;
+}
 
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card .material-icons {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
 }
 
 #get-started{
@@ -69,4 +88,17 @@ nav ul:not(.dropdown-content)>li>a:hover:not(.active) {
     padding: 10px;
     margin: 10px;
     width: auto;
+}
+
+#features h5 {
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+#features p {
+    color: #555;
+}
+
+#features {
+    padding: 4rem 0;
 }

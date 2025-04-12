@@ -1,6 +1,6 @@
 {
     "versionText": "Versão {{version}} está disponível!",
-    "heroTitle": "Controle as suas Finanças com <strong>MyFin Budget</strong>",
+    "heroTitle": "Controle as suas Finanças com <strong>MyFin Budget\uD83D\uDCA1</strong>",
     "heroSubtitle": "Orçamento inteligente, rastreamento de despesas e insights de investimento—tudo em um só lugar.",
     "freeForever": "Livre & open-source, <strong>para sempre</strong>!",
     "getStarted": "Começar",
@@ -12,7 +12,7 @@
       "expenses": "Rastreamento de Despesas",
       "expensesDesc": "Veja para onde vai o seu dinheiro e melhore os seus hábitos de gastos."
     },
-    "callToAction": "Comece a Gerir Melhor o Seu Orçamento",
+    "callToAction": "\uD83C\uDF31Comece a Gerir Melhor o Seu Orçamento\uD83C\uDF31",
     "journey": "Comece a sua jornada para a liberdade financeira hoje!",
     "by": "Por",
     "menu": {
