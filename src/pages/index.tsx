@@ -58,7 +58,7 @@ export default function Home(): ReactNode {
             title={`${siteConfig.title}`}
             description="The open-source personal finance manager">
             <HomepageHeader/>
-            <main>
+            <main style={{backgroundColor: "var(--ifm-navbar-background-color)"}}>
                 <HomepageFeatures/>
             </main>
         </Layout>
