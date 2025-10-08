@@ -13,7 +13,7 @@
 }
 
 [data-theme='dark'] .heroBanner {
-  background: linear-gradient(135deg, #0258a0 0%, #013a6b 100%);
+  /*background: linear-gradient(135deg, #0258a0 0%, #013a6b 100%);*/
 }
 
 .heroBanner::before {
