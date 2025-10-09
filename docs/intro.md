@@ -70,7 +70,7 @@ Password: demo
 ````
 
 ## Initial setup
-[Here](starting-point.md) you can find the full documentation on the
+[Here](getting-started/starting-point.md) you can find the full documentation on the
 first steps to get started.
 
 # Contributing
