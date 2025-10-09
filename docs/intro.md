@@ -70,7 +70,7 @@ Password: demo
 ````
 
 ## Initial setup
-[Here](https://github.com/aFaneca/myfin/wiki/Project-Setup#initial-setup) you can find the full documentation on the
+[Here](starting-point.md) you can find the full documentation on the
 first steps to get started.
 
 # Contributing
