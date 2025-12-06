@@ -34,7 +34,7 @@ function HomepageHeader() {
                             style={{color: "#eaf5ff"}}
                             className="button button--outline button--primary button--lg"
                             to="/docs/intro#demo-account---try-it-for-yourself">
-                            View Demo
+                            Try the Demo
                         </Link>
                     </div>
                 </div>

@@ -63,7 +63,7 @@ Here's some of the features currently in development or planned for the near fut
 
 # Getting Started
 ## Demo account - try it for yourself!
-Before fully committing to it, you can give MyFin a try by using the demo account I've made available [here](https://myfin.afaneca.com).
+Before fully committing to it, you can give MyFin a try by using the demo account I've made available [here](https://myfinbudget.com/goto/demo).
 ````
 Username: demo
 Password: demo

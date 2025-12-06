@@ -6,29 +6,36 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #027de5;
-  --ifm-color-primary-dark: #0271ce;
-  --ifm-color-primary-darker: #026bc2;
-  --ifm-color-primary-darkest: #0158a0;
-  --ifm-color-primary-light: #1989e8;
-  --ifm-color-primary-lighter: #258fea;
-  --ifm-color-primary-lightest: #3d9fed;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  --ifm-background-color: #ffffff;
-  --ifm-navbar-background-color: var(--ifm-background-color);
+    --ifm-color-primary: #027de5;
+    --ifm-color-primary-dark: #0271ce;
+    --ifm-color-primary-darker: #026bc2;
+    --ifm-color-primary-darkest: #0158a0;
+    --ifm-color-primary-light: #1989e8;
+    --ifm-color-primary-lighter: #258fea;
+    --ifm-color-primary-lightest: #3d9fed;
+    --ifm-code-font-size: 95%;
+    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+    --ifm-background-color: #ffffff;
+    --ifm-navbar-background-color: var(--ifm-background-color);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #2e9af5;
-  --ifm-color-primary-dark: #1a8df3;
-  --ifm-color-primary-darker: #0e85f1;
-  --ifm-color-primary-darkest: #026fce;
-  --ifm-color-primary-light: #42a7f7;
-  --ifm-color-primary-lighter: #4eadf7;
-  --ifm-color-primary-lightest: #6dbaf8;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-  --ifm-background-color: #181920;
-  --ifm-navbar-background-color: #123d61;
+    --ifm-color-primary: #2e9af5;
+    --ifm-color-primary-dark: #1a8df3;
+    --ifm-color-primary-darker: #0e85f1;
+    --ifm-color-primary-darkest: #026fce;
+    --ifm-color-primary-light: #42a7f7;
+    --ifm-color-primary-lighter: #4eadf7;
+    --ifm-color-primary-lightest: #6dbaf8;
+    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+    --ifm-background-color: #1f2d3d;
+    --ifm-navbar-background-color: rgb(37, 54, 73);
+    --ifm-background-surface-color: var(--ifm-navbar-background-color);
+    --prism-background-color: var(--ifm-navbar-background-color);
+
+    pre {
+        background: var(--ifm-navbar-background-color) !important;
+    }
 }
+
