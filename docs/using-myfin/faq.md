@@ -19,3 +19,6 @@ In the evolution stats:
 If you see discrepancies between both values, it might be because:
 * You have uncategorized transactions
 * You have transfers to accounts marked as _"exclude from budget"_ (e.g. loan repayment)
+
+## Why isn't the correct rule being applied to my transaction?
+Are you sure you set up your rules correctly? Check the [rules page](rules.md) to learn more about how rules work and some common pitfalls when setting them up.
