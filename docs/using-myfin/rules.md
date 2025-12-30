@@ -150,10 +150,6 @@ If no rule matches the transaction, the engine attempts a best-effort guess usin
 3. **No guess**
   - If neither entity nor category match above the threshold, no attributes are auto-assigned.
 
-:::info
-Fuzzy matching only considers **entities and categories belonging to the same user**. It never tries to match data from other users.
-:::
-
 ### Example
 
 - Transaction description: `"BUY LIDL VAGOS etc"`
