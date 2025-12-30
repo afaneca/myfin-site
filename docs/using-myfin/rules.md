@@ -6,7 +6,9 @@ sidebar_position: 5
 
 :::info
 The information in this document applies to MyFin API version 3.4.0 and later, which introduced a revamped rules engine with smart rule selection based on specificity scoring.
+The fuzzy matching mechanism was added in version 3.5.0.
 :::
+
 ## Overview
 
 The MyFin Budget Rules Engine automatically categorizes transactions based on user-defined rules. When you add a new transaction, the system intelligently matches it against your rules and applies the most appropriate attributes.
@@ -131,136 +133,33 @@ When comparing rules, the engine follows this priority:
 1. **Number of conditions** (more conditions = more specific)
 2. **Total score** (combination of match types and specificity)
 
-## Practical examples
+## Fuzzy fallback (when no rule matches)
 
-### Example 1: more specific substring wins
+If no rule matches the transaction, the engine attempts a best-effort guess using **fuzzy string matching**.
 
-**Rules:**
-- **Rule 1**: Description contains "Target" → Entity: "Target"
-    - Score: 100 × 10 = **1,000**
-- **Rule 2**: Description contains "IRS (Target)" → Entity: "Government"
-    - Score: 100 × 16 = **1,600**
+### How it works
 
-**Transaction:** "Payment IRS (Target) Lisbon"
+1. **Entity inference (first)**
+  - The engine compares the transaction description with **your entities' names**.
+  - If a match reaches the fuzzy threshold, the entity is suggested.
 
-**Result:** Rule 2 is applied ✓
+2. **Category inference (second)**
+  - If no entity is inferred, the engine compares the description with **your categories' names**.
+  - If a match reaches the fuzzy threshold, the category is suggested.
 
----
+3. **No guess**
+  - If neither entity nor category match above the threshold, no attributes are auto-assigned.
 
-### Example 2: multiple conditions beat single specific condition
-
-**Rules:**
-- **Rule 1**: Description contains "Monthly Netflix Subscription Premium" (very specific)
-    - Conditions: 1 (description only)
-    - Score: 100 × 36 = **3,600**
-- **Rule 2**: Description contains "Netflix" AND Amount equals 15.99
-    - Conditions: 2 (description + amount)
-    - Score: (100 × 7) + (1000 × 100) = **100,700**
-
-**Transaction:** "Monthly Netflix Subscription Premium", Amount: 15.99
-
-**Result:** Rule 2 is applied ✓ (2 conditions beat 1 condition)
-
----
-
-### Example 3: exact match beats longer contains
-
-**Rules:**
-- **Rule 1**: Description contains "Store with very long name here"
-    - Score: 100 × 31 = **3,100**
-- **Rule 2**: Description equals "Store"
-    - Score: 1000 × 5 = **5,000**
-
-**Transaction:** "Store"
-
-**Result:** Rule 2 is applied ✓ (EQUALS has higher weight than CONTAINS)
-
----
-
-### Example 4: positive matches beat negative matches
-
-**Rules:**
-- **Rule 1**: Description does not contain "Restaurant" (matches)
-    - Score: 1 × 1 = **1**
-- **Rule 2**: Description contains "Market" (matches)
-    - Score: 100 × 6 = **600**
-
-**Transaction:** "Supermarket purchase"
-
-**Result:** Rule 2 is applied ✓ (positive matches prioritized)
-
----
-
-### Example 5: wrong condition causes rule to fail
-
-**Rules:**
-- **Rule 1**: Description contains "Electricity" AND Amount equals 100.00
-    - Matches description ✓
-    - Matches amount ✗
-    - **Rule does not match**
-- **Rule 2**: Description contains "Electricity"
-    - Matches description ✓
-    - **Rule matches**
-
-**Transaction:** "Electricity bill", Amount: 75.00
-
-**Result:** Rule 2 is applied ✓ (Rule 1 failed because amount didn't match)
-
-## Best practices
-
-### 1. Start broad, then add specific rules
-
-Create general rules first, then add more specific rules for edge cases. The system will automatically prefer the specific ones.
-
-```
-✓ Good:
-  Rule 1: Description contains "Target" → Entity: "Target"
-  Rule 2: Description contains "IRS (Target)" → Entity: "Estado"
-
-✗ Avoid duplicating conditions unnecessarily
-```
-
-### 2. Use multiple conditions for precision
-
-For recurring transactions with known amounts, add amount conditions to make rules more specific.
-
-```
-✓ Good:
-  Description contains "Netflix" AND Amount equals 15.99
-  → More specific, will be preferred over description-only rules
-```
-
-### 3. Use EQUALS for exact matches
-
-When you know the exact description, use EQUALS instead of CONTAINS for highest priority.
-
-```
-✓ Good:
-  Description equals "SPOTIFY PREMIUM"
-  → Will beat any CONTAINS rules for this exact description
-```
-
-### 4. Combine conditions strategically
-
-Use multiple conditions to target very specific transaction patterns.
-
-```
-✓ Good:
-  Description contains "Supermarket" 
-  AND Amount equals 50.00 
-  AND Type equals "Expense"
-  → Highly specific rule for recurring weekly groceries
-```
-
-### 5. Avoid overly complex negative rules
-
-Negative conditions (`NOT_EQUALS`, `NOT_CONTAINS`) have low priority. Use them sparingly.
-
-:::warning
-Use carefully:
-  Description does not contain "Online"
-  → This will match almost everything, making it less useful
+:::info
+Fuzzy matching only considers **entities and categories belonging to the same user**. It never tries to match data from other users.
 :::
+
+### Example
+
+- Transaction description: `"BUY LIDL VAGOS etc"`
+- User has entity: `"LIDL"`
+
+Even if no rule exists, the engine can still infer the entity **LIDL** and pre-fill it.
 
 ## Troubleshooting
 
@@ -303,4 +202,4 @@ A: Currently, all conditions within a rule use AND logic. To achieve OR behavior
 
 **Q: What happens if no rules match my transaction?**
 
-A: The transaction is added without automatic categorization. You can manually assign a category and entity, or create a new rule for future similar transactions.
+A: The engine will attempt a fuzzy match fallback (entity first, then category). If that also fails, the transaction is added without automatic categorization. You can manually assign a category and entity, or create a new rule for future similar transactions.
