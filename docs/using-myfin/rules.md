@@ -192,10 +192,4 @@ You can check them out [here](../development/rules.md).
 
 ## FAQ
 
-**Q: Can I have rules with OR logic (match this OR that)?**
-
-A: Currently, all conditions within a rule use AND logic. To achieve OR behavior, create multiple separate rules.
-
-**Q: What happens if no rules match my transaction?**
-
-A: The engine will attempt a fuzzy match fallback (entity first, then category). If that also fails, the transaction is added without automatic categorization. You can manually assign a category and entity, or create a new rule for future similar transactions.
+You can find them [here](faq.md#rules).
