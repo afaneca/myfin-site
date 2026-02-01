@@ -56,7 +56,7 @@ If you see discrepancies between both values, it might be because:
   similar transactions.
 </details>
 
-### Investments
+## Investments
 
 <details>
 <summary>Why do I have to set the current value manually?</summary>
